@@ -1,0 +1,11 @@
+{
+  "name": "appmechamou",
+  "version": "1.0.0",
+  "description": "\"App para profissionais autonomos\"",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "author": "Kiel Santos",
+  "license": "ISC"
+}
