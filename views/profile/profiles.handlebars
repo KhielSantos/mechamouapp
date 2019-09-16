@@ -1,0 +1,40 @@
+ <section class="container">
+      <h1 class="large text-primary">Profissionais</h1>
+      {{#if profiles}}
+      <p class="lead">
+        <i class="fab fa-connectdevelop"></i> Escolha o profissional que
+            melhor possa te atender
+      </p>
+      {{#each profiles}}
+      <div class="profiles">
+        <div class="profile bg-light"> 
+          <img
+            class="round-img"
+            src="{{user.avatar}}"
+            alt=""
+          />
+          <div>
+            <h2>{{user.name}}</h2>
+            {{#each cellphone}}
+            <p class="fas fa-phone-square">{{[]}}</p>
+            {{/each}}
+            <p>{{city}}</p>
+            <a href="/profiles/user/{{_id}}" class="btn btn-primary">Ver Profissional</a>  
+          </div>
+
+          <ul>
+            {{#each skills}}
+            <li class="text-primary">
+              <i class="fas fa-check">{{[]}}</i>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      {{/each}}
+      {{else}}
+      <p class="lead">
+        <i class="fab fa-connectdevelop"></i>Nenhum Profissional Encontrado
+      </p>
+      {{/if}}
+    </section>

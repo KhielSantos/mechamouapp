@@ -1,3 +1,3 @@
-exports.home = (req, res) => {
-  res.status(200).send('Home Ok');
+exports.getHome = (req, res) => {
+  res.status(200).render('index/home');
 }

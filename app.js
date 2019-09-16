@@ -4,7 +4,8 @@ const exphbs  = require('express-handlebars');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 
-const meChamou = require('./routes/meChamou');
+const meChamouRouter = require('./routes/meChamou');
+const profilesRouter = require('./routes/profile');
 
 const app = express();
 
@@ -22,7 +23,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.get('/', meChamou);
+app.use('/', meChamouRouter);
+app.use('/profiles', profilesRouter);
 
 
 const port = 5000;

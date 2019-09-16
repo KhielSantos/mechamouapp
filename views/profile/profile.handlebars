@@ -1,0 +1,101 @@
+    <section class="container">
+      <a href="/profiles" class="btn btn-light">Ver Profissionais</a>
+      <div class="profile-grid my-1">
+
+        {{#if profile}}
+         <!-- Top -->
+        <div class="profile-top bg-primary p-2">
+          <img
+            class="round-img my-1"
+            src="{{profile.user.avatar}}"
+            alt=""
+          />
+          <h1 class="large">{{profile.user.name}}</h1>
+          {{#each profile.cellphone}}
+          <p class="lead">{{[]}}</p>
+          {{/each}}
+          <p>{{profile.city}}</p>
+
+          <div class="icons my-1">
+            {{#if profile.social.twitter}}
+            <a href="{{profile.social.twitter}}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            {{/if}}
+            {{#if profile.social.facebook}}
+            <a href="{{profile.social.facebook}}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            {{/if}}
+            {{#if profile.social.linkedin}}
+            <a href="{{profile.social.linkedin}}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            {{/if}}
+            {{#if profile.social.youtube}}
+             <a href="{{profile.social.youtube}}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-youtube fa-2x"></i>
+            </a>
+            {{/if}}
+            {{#if profile.social.instagram}}
+            <a href="{{profile.social.instagram}}" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            {{/if}}
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="profile-about bg-light p-2">
+          <h2 class="text-primary">Minha Experiência</h2>
+          <p>{{profile.description}}</p>
+          <div class="line"></div>
+          <h2 class="text-primary">Minhas Habilidades</h2>
+          <div class="skills">
+            {{#each profile.skills}}
+            <div class="p-1"><i class="fa fa-check"></i>{{[]}}</div>
+            {{/each}}
+          </div>
+        </div>
+
+        <!-- Experience -->
+      <div class="profile-exp bg-white p-2">
+          <h2 class="text-primary">Serviços Realizados</h2>
+        {{#if profile.experience}}
+          {{#each profile.experience}}
+          <div>
+            <h3 class="text-dark">{{company}}</h3>
+            <p><strong>Serviço: </strong>{{title}}</p>
+            <p><strong>Cidade: </strong>{{city}}</p>
+            <p><strong>Descrição: </strong>{{description}}</p>
+          </div>
+          {{/each}}
+        {{else}}
+          <h2 class="text-dark">Profissional não tem seviços realizados</h2>
+        {{/if}}
+        </div>
+
+        <div class="profile-edu bg-white p-2">
+          <h2 class="text-primary">Meus Cursos Realizados</h2>
+        {{#if profile.education}}
+          {{#each profile.education}}
+          <div>
+            <h3 class="text-dark">{{school}}</h3>
+            <p><strong>Nivel do curso: </strong>{{degree}}</p>
+            <p><strong>Nome do curso: </strong>{{fieldofstudy}}</p>
+            <p><strong>Descrição: </strong>{{description}}</p>
+          </div>
+          {{/each}}
+        {{else}}
+        <div>
+          <h3 class="text-dark">Profissional não tem cursos realizados</h3>
+        </div>
+        {{/if}}
+        </div>
+      {{else}}
+        <div>
+          <h3 class="text-primary">Profissional não existe!!</h3>
+        </div>
+    </div>
+   {{/if}}
+  </section>

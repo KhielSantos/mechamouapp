@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const index = require('./../controllers/meChamouController');
+const meChamouController = require('./../controllers/meChamouController');
 
-router.get('/', index.home);
+router.get('/', meChamouController.getHome);
 
 module.exports = router;
