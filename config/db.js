@@ -9,7 +9,7 @@ const connectDB = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
       useUnifiedTopology: true 
-    }).then(() => console.log('DB Connected..'));
+    });
   } catch (err) {
     process.exit(1);
   }

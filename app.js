@@ -54,7 +54,7 @@ app.use(function(req, res, next){
 
 
 
-app.get('/', meChamouRouter);
+app.use('/', meChamouRouter);
 app.use('/profiles', profilesRouter);
 app.use('/users', usersRouter);
 
