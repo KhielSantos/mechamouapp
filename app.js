@@ -54,13 +54,13 @@ app.use(function(req, res, next){
 
 
 
-app.use('/', meChamouRouter);
+app.get('/', meChamouRouter);
 app.use('/profiles', profilesRouter);
 app.use('/users', usersRouter);
 
 
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Aplicacao rodando na porta ${port}`)
