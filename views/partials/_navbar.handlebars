@@ -3,8 +3,14 @@
         <a href="/"><i class="fas fa-map-marker-alt"></i> Me Chamou</a>
       </h1>
       <ul>
+        {{#if user}}
         <li><a href="/profiles"><i class="fas fa-users"></i>Profissionais</a></li>
+        <li><a href="/profiles/profile/dashboard"><i class="fas fa-users"></i>Dashboard</a></li>
+        <li><a href="/users/logout"><i class="fas fa-users"></i>Logout</a></li>
+        {{else}}
+         <li><a href="/profiles"><i class="fas fa-users"></i>Profissionais</a></li>
         <li><a href="/users/register"><i class="fas fa-user-plus"></i>Cadastar</a></li>
         <li><a href="/users/login"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+        {{/if}}
       </ul>
 </nav>

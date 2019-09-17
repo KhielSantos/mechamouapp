@@ -1,0 +1,36 @@
+     <section class="container">
+     
+      <h1 class="large text-primary">Add Cursos</h1>
+      <p class="lead">
+        <i class="fas fa-code-branch"></i> Adicione cursos que realizou de sua
+        profissão
+      </p>
+      <form class="form" action="/profiles/create/education?_method=PUT" method="post">
+        <div class="form-group">
+          <input type="text" placeholder="* Escola o Intituição" name="school">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="* Nivel de estudo (iniciante, intermediario ou avançado" name="degree">
+        </div>
+        <div class="form-group">
+          <input type="text" placeholder="* Nome do curso" name="fieldofstudy">
+        </div>
+        <div class="form-group">
+          <h4>Data Inicio</h4>
+          <input type="date" name="from">
+        </div>
+        </div>
+        <div class="form-group">
+          <h4>Data Término</h4>
+          <input type="date" name="to">
+        </div>
+        <div class="form-group">
+          <textarea name="description" cols="30" rows="5" placeholder="Descrição do curso"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary my-1">
+        <a class="btn btn-light my-1" href="/profiles/profile/dashboard">
+          Retorno
+        </a>
+      </form>
+      </section>
+

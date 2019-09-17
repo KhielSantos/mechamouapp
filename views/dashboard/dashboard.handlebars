@@ -7,9 +7,9 @@
       
       {{#if profile}}
       <div class="dash-buttons">
-        <a href="/profiles/create/profile" class="btn btn-light"><i class="fas fa-user-circle text-primary"></i> Editar meu Perfil</a>
-        <a href="add-experience.html" class="btn btn-light"><i class="fab fa-black-tie text-primary"></i> Add Serviços Realizados</a>
-        <a href="add-education.html" class="btn btn-light"><i class="fas fa-graduation-cap text-primary"></i> Add Cursos Realizados</a>
+        <a href="/profiles/profile/edit/{{profile._id}}" class="btn btn-light"><i class="fas fa-user-circle text-primary"></i> Editar meu Perfil</a>
+        <a href="/profiles/create/experience" class="btn btn-light"><i class="fab fa-black-tie text-primary"></i> Add Serviços Realizados</a>
+        <a href="/profiles/create/education" class="btn btn-light"><i class="fas fa-graduation-cap text-primary"></i> Add Cursos Realizados</a>
       </div>
 
       {{#if profile.experience}}
@@ -30,9 +30,13 @@
             <td class="hide-sm">{{title}}</td>
             <td class="hide-sm">{{location}}</td>
             <td>
-              <button class="btn btn-danger">
-                Excluir
-              </button>
+            <div class="my-2">
+              <form method="post" action="/profiles/profile/experience/{{_id}}?_method=DELETE">
+                <button type="submit" class="btn btn-danger" >
+                    <i class="fas fa-user-minus"></i>Excluir minha conta
+                </button>
+              </form>
+              </div>
             </td>
           </tr>
           {{/each}}
@@ -62,9 +66,13 @@
             <td class="hide-sm">{{fieldofstudy}}</td>
             <td class="hide-sm">{{degree}}</td>
             <td>
-              <button class="btn btn-danger">
-                Excluir
-              </button>
+            <div class="my-2">
+              <form method="post" action="/profiles/profile/education/{{_id}}?_method=DELETE">
+                <button type="submit" class="btn btn-danger" >
+                    <i class="fas fa-user-minus"></i>Excluir minha conta
+                </button>
+              </form>
+              </div>
             </td>
           </tr>
           {{/each}}
@@ -77,11 +85,11 @@
 {{/if}}
 
         <div class="my-2">
-            <button class="btn btn-danger">
-                <i class="fas fa-user-minus"></i>
-
-                Excluir minha conta
+          <form method="post" action="/profiles/profile/delete?_method=DELETE">
+            <button type="submit" class="btn btn-danger" >
+                <i class="fas fa-user-minus"></i>Excluir minha conta
             </button>
+          </form>
           </div>
 
         {{else}}

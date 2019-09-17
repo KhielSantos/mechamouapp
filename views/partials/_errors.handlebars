@@ -1,9 +1,13 @@
 {{#if error}}
+<section class="container">
   <div class="alert alert-danger">{{error}}</div>
+</section>
 {{/if}}
 
 {{#each errors}}
+<section class="container">
   <div class="alert alert-danger">{{text}}</div>
+</section>
 {{else}}
 
 {{/each}}

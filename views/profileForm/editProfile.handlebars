@@ -1,4 +1,5 @@
  <section class="container">
+      {{#if profile}}
       <h1 class="large text-primary">Crie seu Perfil</h1>
       <p class="lead">
         <i class="fas fa-user"></i> Vamos obter algumas informações para
@@ -6,12 +7,12 @@
       </p>
       <small>* = Campo obrigatório</small>
       <div class="card">
-        <form class="form" method="post" action="/profiles/create/profile">
+        <form class="form" method="post" action="/profiles/profile/edit/{{profile._id}}?_method=PATCH">
           <div class="form-group col-md-12">
             <small class="form-text">Escolha sua Profissão</small>
             <select
               name="profession">
-              <option value="0@">* Selecionar sua profissão</option>
+              <option>{{profile.profession}}</option>
               <option value="Pedreiro">Pedreiro</option>
               <option value="Pintor">Pintor</option>
               <option value="Diarista">Diarista</option>
@@ -32,7 +33,7 @@
               <small class="form-text">Conte-nos um pouco sobre você</small>
               <textarea
                 placeholder="Uma breve biografia sua carreira"
-                name="description"></textarea>
+                name="description">{{profile.description}}</textarea>
             </div>
           </div>
           <div class="form-row">
@@ -40,7 +41,7 @@
               <small class="form-text">
                 Digite suas Habilidades separado por ','
               </small>
-              <input type="text" placeholder="Habilidades"  name="skills"/>
+              <input type="text" placeholder="Habilidades"  name="skills" value="{{profile.skills}}"/>
             </div>
           </div>
           <div class="form-row">
@@ -48,39 +49,39 @@
               <small class="form-text">
                 Pode colocar mais de um telefone
               </small>
-              <input type="text" placeholder="Telefone" name="cellphone" />
+              <input type="text" placeholder="Telefone" name="cellphone" value="{{profile.cellphone}}" />
             </div>
             <div class="col-md-4">
               <small class="form-text">Digite seu CPF</small>
-              <input type="text" placeholder="CPF" name="cpf" />
+              <input type="text" placeholder="CPF" name="cpf" value="{{profile.cpf}}"/>
             </div>
             <div class="col-md-4">
               <small class="form-text">Digite seu CEP</small>
-              <input type="text"  placeholder="CEP" name="cep" />
+              <input type="text"  placeholder="CEP" name="cep" value="{{profile.cep}}"/>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-6"> 
               <small class="form-text">Digite nome da rua</small>
-              <input type="text"  placeholder="Rua:"  name="street" />
+              <input type="text"  placeholder="Rua:"  name="street" value="{{profile.street}}"/>
             </div>
             <div class="col-md-2">
               <small class="form-text">Digite numero da casa</small>
-              <input type="text" placeholder="N°:" name="num" />
+              <input type="text" placeholder="N°:" name="num" value="{{profile.num}}"/>
             </div>
             <div class="col-md-4">
               <small class="form-text">Digite o Bairro</small>
-              <input type="text" placeholder="Bairro" name="neighborhood" />
+              <input type="text" placeholder="Bairro" name="neighborhood" value="{{profile.neighborhood}}"/>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-7">
               <small class="form-text">Digite nome da Cidade</small>
-              <input type="text"  placeholder="Cidade"  name="city" />
+              <input type="text"  placeholder="Cidade"  name="city" value="{{profile.city}}"/>
             </div>
             <div class="col-md-5">
               <small class="form-text">Digite o nome do Estado</small>
-              <input  type="text" placeholder="Estado" name="stade" />
+              <input  type="text" placeholder="Estado" name="stade" value="{{profile.stade}}"/>
             </div>
           </div>
 
@@ -93,61 +94,32 @@
         
               <div class="form-group social-input">
                 <i class="fab fa-twitter fa-2x"></i>
-                <input type="text" placeholder="Twitter URL" name="twitter" />
+                <input type="text" placeholder="Twitter URL" name="twitter" value="{{profile.social.twitter}}"/>
               </div>
               <div class="form-group social-input">
                 <i class="fab fa-facebook fa-2x"></i>
-                <input type="text" placeholder="Facebook URL" name="facebook" />
+                <input type="text" placeholder="Facebook URL" name="facebook" value="{{profile.social.facebook}}"/>
               </div>
 
               <div class="form-group social-input">
                 <i class="fab fa-youtube fa-2x"></i>
-                <input type="text" placeholder="YouTube URL" name="youtube" />
+                <input type="text" placeholder="YouTube URL" name="youtube" value="{{profile.social.youtube}}"/>
               </div>
               <div class="form-group social-input">
                 <i class="fab fa-linkedin fa-2x"></i>
-                <input type="text" placeholder="Linkedin URL" name="linkedin" />
+                <input type="text" placeholder="Linkedin URL" name="linkedin" value="{{profile.social.linkedin}}"/>
               </div>
 
               <div class="form-group social-input">
                 <i class="fab fa-instagram fa-2x"></i>
                 <input
-                  type="text" placeholder="Instagram URL" name="instagram" />
+                  type="text" placeholder="Instagram URL" name="instagram" value="{{profile.social.instagram}}"/>
               </div>
-
-
-
-          <div class="custom-control custom-checkbox mb-3">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="customControlValidation1"
-              required
-            />
-            <label
-              class="custom-control-label"
-              for="customControlValidation1"
-            >
-              Termos de Privacidade
-            </label>
-          </div>
-          <div class="custom-control custom-checkbox mb-3">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="customControlValidation1"
-            />
-            <label
-              class="custom-control-label"
-              for="customControlValidation1"
-            >
-              Politica de Privacidade
-            </label>
-          </div>
           <input type="submit" class="btn btn-primary my-1" />
           <a class="btn btn-light my-1" href="/profiles/profile/dashboard">
             Retornar
           </a>
         </form>
         </div>
+        {{/if}}
     </section>

@@ -4,12 +4,9 @@ const passport = require('passport');
 
 const User = require('./../models/User');
 
-exports.getHome = (req, res) => {
-  res.status(200).render('index/home');
-}
-
 
 exports.getLogin =  (req, res) => {
+
   res.status(200).render('users/login'); 
 }
 
