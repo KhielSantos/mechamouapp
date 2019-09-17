@@ -27,7 +27,7 @@ exports.getProfileId = async(req, res) => {
 
 exports.getUserDashboard = async(req, res) => {
   try {
-    const profile = await Profile.findOne({user: req.params.id}).select('-password').populate('user', ['name', 'avatar']);
+    const profile = await Profile.findOne({user: req.user.id}).select('-password').populate('user', ['name', 'avatar']);
     console.log(profile)
     res.status(200).render('dashboard/dashboard', {
       profile

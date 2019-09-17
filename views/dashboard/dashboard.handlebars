@@ -3,14 +3,15 @@
         Dashboard
       </h1>
       <p class="lead"><i class="fas fa-user"></i> Seja Bem Vindo</p>
-      <p class="lead"> {{profile.user.name}}</p>
+      <p class="lead"> {{req.user.name}}</p>
+      
+      {{#if profile}}
       <div class="dash-buttons">
         <a href="/profiles/create/profile" class="btn btn-light"><i class="fas fa-user-circle text-primary"></i> Editar meu Perfil</a>
         <a href="add-experience.html" class="btn btn-light"><i class="fab fa-black-tie text-primary"></i> Add Serviços Realizados</a>
         <a href="add-education.html" class="btn btn-light"><i class="fas fa-graduation-cap text-primary"></i> Add Cursos Realizados</a>
       </div>
 
-      {{#if profile}}
       {{#if profile.experience}}
       <h2 class="my-2">Serviços Realizados</h2>
       <table class="table">
@@ -84,6 +85,9 @@
           </div>
 
         {{else}}
+      <div class="dash-buttons">
+        <a href="/profiles/create/profile" class="btn btn-light"><i class="fas fa-user-circle text-primary"></i>Criar Perfil Profissional</a>
+      </div>
         <h2 class="my-2">Você não possui um perfil profissional</h2>
         <p class="lead">Se você é um profissional Clique em Editar meu perfil</p>
         {{/if}}
