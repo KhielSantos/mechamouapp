@@ -1,0 +1,153 @@
+ <section class="container">
+      <h1 class="large text-primary">Crie seu Perfil</h1>
+      <p class="lead">
+        <i class="fas fa-user"></i> Vamos obter algumas informações para
+        destacar seu perfil
+      </p>
+      <small>* = Campo obrigatório</small>
+      <div class="card">
+        <form class="form" method="post" action="/profiles/create/profile">
+          <div class="form-group col-md-12">
+            <small class="form-text">Escolha sua Profissão</small>
+            <select
+              name="profession">
+              <option value="0@">* Selecionar sua profissão</option>
+              <option value="Pedreiro">Pedreiro</option>
+              <option value="Pintor">Pintor</option>
+              <option value="Diarista">Diarista</option>
+              <option value="Mecânico de Veiculos">Mecânico de Veiculos</option>
+              <option value="Mecânico de Motocicletas">
+                Mecânico de Motocicletas
+              </option>
+              <option value="Cabeleireiro">Cabeleireiro</option>
+              <option value="Manicure e Pedicure">Manicure e Pedicure</option>
+              <option value="Chaveiro">Chaveiro</option>
+              <option value="Costureiro">Costureiro</option>
+              <option value="Desenvolvedor de Sistemas">Desenvolvedor de Sistemas</option>
+              <option value="Marceneiro">Marceneiro</option>
+              <option value="Moto Taxi">Moto Taxi</option>
+              <option value="Padeiro">Padeiro</option>
+            </select>
+            <div class="form-group">
+              <small class="form-text">Conte-nos um pouco sobre você</small>
+              <textarea
+                placeholder="Uma breve biografia sua carreira"
+                name="description"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-12">
+              <small class="form-text">
+                Digite suas Habilidades separado por ','
+              </small>
+              <input type="text" placeholder="Habilidades"  name="skills"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class=" col-md-4">
+              <small class="form-text">
+                Pode colocar mais de um telefone
+              </small>
+              <input type="text" placeholder="Telefone" name="cellphone" />
+            </div>
+            <div class="col-md-4">
+              <small class="form-text">Digite seu CPF</small>
+              <input type="text" placeholder="CPF" name="cpf" />
+            </div>
+            <div class="col-md-4">
+              <small class="form-text">Digite seu CEP</small>
+              <input type="text"  placeholder="CEP" name="cep" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-6"> 
+              <small class="form-text">Digite nome da rua</small>
+              <input type="text"  placeholder="Rua:"  name="street" />
+            </div>
+            <div class="col-md-2">
+              <small class="form-text">Digite numero da casa</small>
+              <input type="text" placeholder="N°:" name="num" />
+            </div>
+            <div class="col-md-4">
+              <small class="form-text">Digite o Bairro</small>
+              <input type="text" placeholder="Bairro" name="neighborhood" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-7">
+              <small class="form-text">Digite nome da Cidade</small>
+              <input type="text"  placeholder="Cidade"  name="city" />
+            </div>
+            <div class="col-md-5">
+              <small class="form-text">Digite o nome do Estado</small>
+              <input  type="text" placeholder="Estado" name="stade" />
+            </div>
+          </div>
+
+          <div class="my-2"> 
+            <button type="button" class="btn btn-light" > Adicione suas Redes Sociais
+            </button>
+            <span>Opcional</span>
+          </div>
+
+        
+              <div class="form-group social-input">
+                <i class="fab fa-twitter fa-2x"></i>
+                <input type="text" placeholder="Twitter URL" name="twitter" />
+              </div>
+              <div class="form-group social-input">
+                <i class="fab fa-facebook fa-2x"></i>
+                <input type="text" placeholder="Facebook URL" name="facebook" />
+              </div>
+
+              <div class="form-group social-input">
+                <i class="fab fa-youtube fa-2x"></i>
+                <input type="text" placeholder="YouTube URL" name="youtube" />
+              </div>
+              <div class="form-group social-input">
+                <i class="fab fa-linkedin fa-2x"></i>
+                <input type="text" placeholder="Linkedin URL" name="linkedin" />
+              </div>
+
+              <div class="form-group social-input">
+                <i class="fab fa-instagram fa-2x"></i>
+                <input
+                  type="text" placeholder="Instagram URL" name="instagram" />
+              </div>
+
+
+
+          <div class="custom-control custom-checkbox mb-3">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customControlValidation1"
+              required
+            />
+            <label
+              class="custom-control-label"
+              for="customControlValidation1"
+            >
+              Termos de Privacidade
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox mb-3">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customControlValidation1"
+            />
+            <label
+              class="custom-control-label"
+              for="customControlValidation1"
+            >
+              Politica de Privacidade
+            </label>
+          </div>
+          <input type="submit" class="btn btn-primary my-1" />
+          <Link class="btn btn-light my-1" to="/dashboard">
+            Retornar
+          </Link>
+        </form>
+        </div>
+    </section>
