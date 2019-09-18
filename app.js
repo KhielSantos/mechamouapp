@@ -9,17 +9,17 @@ const passport = require('passport')
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 
-const meChamouRouter = require('./routes/meChamou');
-const profilesRouter = require('./routes/profile');
-const usersRouter = require('./routes/user');
 
 const app = express();
+
+const mechamou = require('./routes/mechamou');
+const profiles = require('./routes/profile');
+const users = require('./routes/user');
 
 require('./config/passport')(passport);
 
 mongoose.Promise = global.Promise;
 connectDB();
-
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main'
@@ -54,9 +54,9 @@ app.use(function(req, res, next){
 
 
 
-app.use('/', meChamouRouter);
-app.use('/profiles', profilesRouter);
-app.use('/users', usersRouter);
+app.use('/', mechamou);
+app.use('/profiles', profiles);
+app.use('/users', users);
 
 
 

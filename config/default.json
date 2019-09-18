@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://khiel123:khiel123@me-chamou-lwpv0.mongodb.net/dbmechamou?retryWrites=true&w=majority",
-  "jwtSecret": "ac171c9054b0fA4868l8164s46f334f057e8"
-}
