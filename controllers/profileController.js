@@ -39,7 +39,6 @@ exports.getEditProfileId = async(req, res) => {
 exports.getUserDashboard = async(req, res) => {
   try {
     const profile = await Profile.findOne({user: req.user.id}).select('-password').populate('user', ['name', 'avatar']);
-    console.log(profile)
     res.status(200).render('dashboard/dashboard', {
       profile
     })
@@ -145,7 +144,6 @@ exports.deleteProfile = async (req, res) => {
 
 exports.createExperience = async (req, res) => {
 
-  console.log(req.body)
   const {
     title,
     company,
@@ -165,7 +163,6 @@ exports.createExperience = async (req, res) => {
     current,
     description
   };
-  console.log(req.body)
 
   try {
     const profile = await Profile.findOne({ user: req.user.id });

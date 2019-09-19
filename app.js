@@ -12,7 +12,6 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-const mechamou = require('./routes/mechamou');
 const profiles = require('./routes/profile');
 const users = require('./routes/user');
 
@@ -52,9 +51,10 @@ app.use(function(req, res, next){
   next();
 });
 
+app.get('/', (req, res) =>{
+  res.status(200).render('index/home');
+})
 
-
-app.use('/', mechamou);
 app.use('/profiles', profiles);
 app.use('/users', users);
 
