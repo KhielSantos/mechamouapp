@@ -2,9 +2,9 @@
   "name": "app-me-chamou",
   "version": "1.0.0",
   "description": "\"App para profissionais autonomos\"",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server"
   },
   "author": "Kiel Santos",
   "license": "MIT",
